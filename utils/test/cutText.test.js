@@ -23,4 +23,9 @@ describe('CutText', () => {
     expect(cutText('Lorem Ipsum', function() {})).to.equal('Error');
   });
 
+  it('Should return an error if "maxLength" is lower or equal 0', () => {
+    expect(cutText('Lorem Ipsum', 0)).to.equal('Error');
+    expect(cutText('Lorem Ipsum', -6)).to.equal('Error');
+  });
+
 });
